@@ -282,7 +282,7 @@
       <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
     </text>
     <g class="line1">
-      <text x="151" y="55">Hello World !</text>
+      <text x="151" y="55">Hello World ! \</text>
     </g>
 
     <!-- Ligne 2 -->
