@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="250" viewBox="0 0 600 250">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap');
-
+    /* Style global du terminal */
     .bg {
       fill: #0d1117;
       stroke: #30363d;
@@ -17,7 +16,7 @@
     .dot-green { fill: #27c93f; cx: 65px; }
     
     .term-text {
-      font-family: 'Fira Code', 'Ubuntu Mono', 'Courier New', Courier, monospace;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
       font-size: 14px;
       fill: #c9d1d9;
     }
@@ -25,7 +24,7 @@
     .prompt-loc { fill: #58a6ff; }
     .prompt-symbol { fill: #f0f6fc; }
     
-    /* Typing animations using clip-paths to reveal text character by character */
+    /* Animations d'écriture avec clip-paths */
     .line1 { clip-path: url(#clip1); }
     .line2 { clip-path: url(#clip2); }
     .line3 { clip-path: url(#clip3); }
@@ -49,12 +48,12 @@
       95%, 100% { opacity: 0; }
     }
 
-    /* Flashing cursor animation */
+    /* Animation du clignotement du curseur */
     @keyframes blink {
       50% { opacity: 0; }
     }
 
-    /* Line 1 typing: 0% to 10% (Hello World !) */
+    /* Écriture Ligne 1 : 0% à 10% */
     @keyframes type-line1 {
       0% { width: 0; }
       2% { width: 17px; }
@@ -66,7 +65,7 @@
       95%, 100% { width: 0; }
     }
 
-    /* Line 2 typing: 12% to 22% (Don't hesitate...) */
+    /* Écriture Ligne 2 : 12% à 22% */
     @keyframes type-line2 {
       0%, 12% { width: 0; }
       14% { width: 50px; }
@@ -77,7 +76,7 @@
       22%, 100% { width: 412px; }
     }
 
-    /* Line 3 typing: 24% to 34% (echo $biggestProject) */
+    /* Écriture Ligne 3 : 24% à 34% */
     @keyframes type-line3 {
       0%, 24% { width: 0; }
       26% { width: 40px; }
@@ -88,7 +87,7 @@
       34%, 100% { width: 168px; }
     }
 
-    /* Line 4 typing: 36% to 46% (Facial recognition "Faciale") */
+    /* Écriture Ligne 4 : 36% à 46% */
     @keyframes type-line4 {
       0%, 36% { width: 0; }
       38% { width: 60px; }
@@ -99,7 +98,7 @@
       46%, 100% { width: 252px; }
     }
 
-    /* Line 5 typing: 48% to 58% (echo $root-me) */
+    /* Écriture Ligne 5 : 48% à 58% */
     @keyframes type-line5 {
       0%, 48% { width: 0; }
       50% { width: 30px; }
@@ -109,7 +108,7 @@
       58%, 100% { width: 110px; }
     }
 
-    /* Line 6 typing: 60% to 75% (You can also check my root-me...) */
+    /* Écriture Ligne 6 : 60% à 75% */
     @keyframes type-line6 {
       0%, 60% { width: 0; }
       62% { width: 80px; }
@@ -121,14 +120,14 @@
       75%, 100% { width: 513px; }
     }
 
-    /* Line 7 typing: 77% to 83% (^C) */
+    /* Écriture Ligne 7 : 77% à 83% */
     @keyframes type-line7 {
       0%, 77% { width: 0; }
       80% { width: 10px; }
       83%, 100% { width: 17px; }
     }
 
-    /* Line 8 typing: 85% to 92% (clear) */
+    /* Écriture Ligne 8 : 85% à 92% */
     @keyframes type-line8 {
       0%, 85% { width: 0; }
       87% { width: 15px; }
@@ -136,9 +135,9 @@
       92%, 100% { width: 42px; }
     }
 
-    /* Seamless timeline for the cursor to follow the typing text */
+    /* Déplacement synchronisé du curseur d'écriture */
     @keyframes move-cursor {
-      /* Line 1 typing */
+      /* Saisie Ligne 1 */
       0% { x: 151px; y: 40px; }
       2% { x: 168px; y: 40px; }
       3% { x: 168px; y: 40px; }
@@ -147,13 +146,13 @@
       8% { x: 235px; y: 40px; }
       10% { x: 261px; y: 40px; }
       
-      /* Pause on Line 1 */
+      /* Pause Ligne 1 */
       11.9% { x: 261px; y: 40px; }
       
-      /* Move to Line 2 start */
+      /* Passage Ligne 2 */
       12% { x: 25px; y: 62px; }
       
-      /* Line 2 typing */
+      /* Saisie Ligne 2 */
       14% { x: 75px; y: 62px; }
       15% { x: 75px; y: 62px; }
       17% { x: 185px; y: 62px; }
@@ -161,13 +160,13 @@
       20% { x: 335px; y: 62px; }
       22% { x: 437px; y: 62px; }
       
-      /* Pause on Line 2 */
+      /* Pause Ligne 2 */
       23.9% { x: 437px; y: 62px; }
       
-      /* Move to Line 3 start */
+      /* Passage Ligne 3 */
       24% { x: 151px; y: 84px; }
       
-      /* Line 3 typing */
+      /* Saisie Ligne 3 */
       26% { x: 191px; y: 84px; }
       27% { x: 191px; y: 84px; }
       29% { x: 251px; y: 84px; }
@@ -175,13 +174,13 @@
       33% { x: 301px; y: 84px; }
       34% { x: 319px; y: 84px; }
       
-      /* Pause on Line 3 */
+      /* Pause Ligne 3 */
       35.9% { x: 319px; y: 84px; }
       
-      /* Move to Line 4 start */
+      /* Passage Ligne 4 */
       36% { x: 25px; y: 106px; }
       
-      /* Line 4 typing */
+      /* Saisie Ligne 4 */
       38% { x: 85px; y: 106px; }
       39% { x: 85px; y: 106px; }
       41% { x: 165px; y: 106px; }
@@ -189,26 +188,26 @@
       45% { x: 245px; y: 106px; }
       46% { x: 277px; y: 106px; }
       
-      /* Pause on Line 4 */
+      /* Pause Ligne 4 */
       47.9% { x: 277px; y: 106px; }
       
-      /* Move to Line 5 start */
+      /* Passage Ligne 5 */
       48% { x: 151px; y: 128px; }
       
-      /* Line 5 typing */
+      /* Saisie Ligne 5 */
       50% { x: 181px; y: 128px; }
       51% { x: 181px; y: 128px; }
       54% { x: 231px; y: 128px; }
       55% { x: 231px; y: 128px; }
       58% { x: 261px; y: 128px; }
       
-      /* Pause on Line 5 */
+      /* Pause Ligne 5 */
       59.9% { x: 261px; y: 128px; }
       
-      /* Move to Line 6 start */
+      /* Passage Ligne 6 */
       60% { x: 25px; y: 150px; }
       
-      /* Line 6 typing */
+      /* Saisie Ligne 6 */
       62% { x: 105px; y: 150px; }
       64% { x: 185px; y: 150px; }
       65% { x: 185px; y: 150px; }
@@ -217,35 +216,35 @@
       72% { x: 465px; y: 150px; }
       75% { x: 538px; y: 150px; }
       
-      /* Pause on Line 6 */
+      /* Pause Ligne 6 */
       76.9% { x: 538px; y: 150px; }
       
-      /* Move to Line 7 start */
+      /* Passage Ligne 7 */
       77% { x: 151px; y: 172px; }
       
-      /* Line 7 typing */
+      /* Saisie Ligne 7 */
       80% { x: 161px; y: 172px; }
       83% { x: 168px; y: 172px; }
       
-      /* Pause on Line 7 */
+      /* Pause Ligne 7 */
       84.9% { x: 168px; y: 172px; }
       
-      /* Move to Line 8 start */
+      /* Passage Ligne 8 */
       85% { x: 151px; y: 194px; }
       
-      /* Line 8 typing */
+      /* Saisie Ligne 8 */
       87% { x: 166px; y: 194px; }
       89% { x: 176px; y: 194px; }
       92% { x: 193px; y: 194px; }
       
-      /* Pause on Line 8 before Clear */
+      /* Pause Ligne 8 avant réinitialisation */
       94.9% { x: 193px; y: 194px; }
       
-      /* Reset cursor for next iteration during clear */
+      /* Reset du curseur pour le prochain cycle */
       95%, 100% { x: 151px; y: 40px; }
     }
 
-    /* Assigning animation timing */
+    /* Assignation des durées d'animations */
     #rect1 { animation: type-line1 18s infinite; }
     #rect2 { animation: type-line2 18s infinite; }
     #rect3 { animation: type-line3 18s infinite; }
@@ -268,17 +267,17 @@
     <clipPath id="clip8"><rect id="rect8" x="151" y="194" width="0" height="20" /></clipPath>
   </defs>
 
-  <!-- Terminal Window Background -->
+  <!-- Arrière-plan de la fenêtre du terminal -->
   <rect class="bg" width="100%" height="100%" />
 
-  <!-- Window Header Buttons -->
+  <!-- Boutons de la barre d'outils -->
   <circle class="dot dot-red" />
   <circle class="dot dot-yellow" />
   <circle class="dot dot-green" />
 
-  <!-- Terminal Text Console -->
+  <!-- Console de texte -->
   <g class="term-text" transform="translate(0, 15)">
-    <!-- Line 1: Main prompt stays visible on clear screen reset -->
+    <!-- Ligne 1 : L'invite principale reste visible après le clear -->
     <text x="25" y="55">
       <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
     </text>
@@ -286,14 +285,14 @@
       <text x="151" y="55">Hello World !</text>
     </g>
 
-    <!-- Line 2 -->
+    <!-- Ligne 2 -->
     <g class="clearable">
       <g class="line2">
         <text x="25" y="77">&gt; Don't hesitate to contact me on discord as sho7</text>
       </g>
     </g>
 
-    <!-- Line 3 -->
+    <!-- Ligne 3 -->
     <g class="clearable">
       <text x="25" y="99">
         <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
@@ -303,19 +302,17 @@
       </g>
     </g>
 
-    <!-- Line 4 (Clickable SVG Hyperlink) -->
+    <!-- Ligne 4 -->
     <g class="clearable">
       <g class="line4">
-        <a href="https://github.com/Senku40k8/Faciale" target="_blank">
-          <text x="25" y="121">
-            <tspan class="prompt-symbol">&gt; Facial recognition </tspan>
-            <tspan style="fill: #58a6ff; text-decoration: underline; font-weight: bold; cursor: pointer;">"Faciale"</tspan>
-          </text>
-        </a>
+        <text x="25" y="121">
+          <tspan class="prompt-symbol">&gt; Facial recognition </tspan>
+          <tspan style="fill: #58a6ff; text-decoration: underline; font-weight: bold;">"Faciale"</tspan>
+        </text>
       </g>
     </g>
 
-    <!-- Line 5 -->
+    <!-- Ligne 5 -->
     <g class="clearable">
       <text x="25" y="143">
         <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
@@ -325,14 +322,14 @@
       </g>
     </g>
 
-    <!-- Line 6 -->
+    <!-- Ligne 6 -->
     <g class="clearable">
       <g class="line6">
         <text x="25" y="165">&gt; You can also check my root-me profile by clicking this term</text>
       </g>
     </g>
 
-    <!-- Line 7 -->
+    <!-- Ligne 7 -->
     <g class="clearable">
       <text x="25" y="187">
         <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
@@ -342,7 +339,7 @@
       </g>
     </g>
 
-    <!-- Line 8 -->
+    <!-- Ligne 8 -->
     <g class="clearable">
       <text x="25" y="209">
         <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
@@ -352,7 +349,7 @@
       </g>
     </g>
 
-    <!-- Flashing Typing Cursor -->
+    <!-- Curseur clignotant -->
     <rect id="cursor-rect" class="cursor" width="8" height="15" />
   </g>
 </svg>
