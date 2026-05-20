@@ -1,4 +1,10 @@
-## Hi there 👋
+<div align="center">
+	<br>
+	<a href="https://zacheller.dev/whoami/">
+		<img src="header.svg" alt="Hi there!">
+	</a>
+	<br>
+</div>
 
 <!--
 **Senku40k8/Senku40k8** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
