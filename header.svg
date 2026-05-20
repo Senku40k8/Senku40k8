@@ -16,7 +16,7 @@
     .dot-green { fill: #27c93f; cx: 65px; }
     
     .term-text {
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-family: 'Courier New', Courier, monospace;
       font-size: 14px;
       fill: #c9d1d9;
     }
@@ -24,21 +24,27 @@
     .prompt-loc { fill: #58a6ff; }
     .prompt-symbol { fill: #f0f6fc; }
     
-    /* Animations d'écriture avec clip-paths */
+    /* Animations de révélation (Clip-paths) */
     .line1 { clip-path: url(#clip1); }
     .line2 { clip-path: url(#clip2); }
     .line3 { clip-path: url(#clip3); }
-    .line4 { clip-path: url(#clip4); }
     .line5 { clip-path: url(#clip5); }
-    .line6 { clip-path: url(#clip6); }
     .line7 { clip-path: url(#clip7); }
-    .line8 { clip-path: url(#clip8); }
     
     .cursor {
       fill: #c9d1d9;
       animation: blink 0.8s step-end infinite;
     }
 
+    /* Visibilité séquentielle des invites (Prompts) */
+    .grp-line2 { animation: show-l2 18s infinite step-end; }
+    .grp-line3 { animation: show-l3 18s infinite step-end; }
+    .grp-line4 { animation: show-l4 18s infinite step-end; }
+    .grp-line5 { animation: show-l5 18s infinite step-end; }
+    .grp-line6 { animation: show-l6 18s infinite step-end; }
+    .grp-line7 { animation: show-l7 18s infinite step-end; }
+
+    /* Masquage global lors du clear */
     .clearable {
       animation: clear-screen 18s infinite;
     }
@@ -48,199 +54,149 @@
       95%, 100% { opacity: 0; }
     }
 
-    /* Animation du clignotement du curseur */
+    /* Contrôles de visibilité pas à pas */
+    @keyframes show-l2 { 0%, 11.9% { opacity: 0; } 12%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes show-l3 { 0%, 25.9% { opacity: 0; } 26%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes show-l4 { 0%, 43.9% { opacity: 0; } 44%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes show-l5 { 0%, 46.9% { opacity: 0; } 47%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes show-l6 { 0%, 60.9% { opacity: 0; } 61%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes show-l7 { 0%, 63.9% { opacity: 0; } 64%, 94.9% { opacity: 1; } 95%, 100% { opacity: 0; } }
+
+    /* Clignotement du curseur physique */
     @keyframes blink {
       50% { opacity: 0; }
     }
 
-    /* Écriture Ligne 1 : 0% à 10% */
+    /* Écriture Ligne 1 : "Hello World ! \" (0% à 10%) */
     @keyframes type-line1 {
       0% { width: 0; }
-      2% { width: 17px; }
-      3% { width: 17px; }
-      5% { width: 50px; }
-      6% { width: 50px; }
-      8% { width: 84px; }
-      10%, 94.9% { width: 110px; }
-      95%, 100% { width: 0; }
+      1% { width: 17px; }
+      2.5% { width: 42px; }
+      4% { width: 59px; }
+      6% { width: 93px; }
+      8% { width: 109px; }
+      10%, 100% { width: 126px; }
     }
 
-    /* Écriture Ligne 2 : 12% à 22% */
+    /* Écriture Ligne 2 : "Don't hesitate to contact me on discord as sho7" (12% à 24%) */
     @keyframes type-line2 {
       0%, 12% { width: 0; }
-      14% { width: 50px; }
-      15% { width: 50px; }
-      17% { width: 160px; }
-      18% { width: 160px; }
-      20% { width: 310px; }
-      22%, 100% { width: 412px; }
+      13.5% { width: 50px; }
+      15% { width: 118px; }
+      17% { width: 185px; }
+      19.5% { width: 260px; }
+      22% { width: 345px; }
+      24%, 100% { width: 412px; }
     }
 
-    /* Écriture Ligne 3 : 24% à 34% */
+    /* Écriture Ligne 3 : "You can also check my root-me profile by clicking this term" (26% à 42%) */
     @keyframes type-line3 {
-      0%, 24% { width: 0; }
-      26% { width: 40px; }
-      27% { width: 40px; }
-      29% { width: 100px; }
-      31% { width: 100px; }
-      33% { width: 150px; }
-      34%, 100% { width: 168px; }
+      0%, 26% { width: 0; }
+      28.5% { width: 92px; }
+      31% { width: 185px; }
+      34% { width: 280px; }
+      37% { width: 370px; }
+      40% { width: 454px; }
+      42%, 100% { width: 504px; }
     }
 
-    /* Écriture Ligne 4 : 36% à 46% */
-    @keyframes type-line4 {
-      0%, 36% { width: 0; }
-      38% { width: 60px; }
-      39% { width: 60px; }
-      41% { width: 140px; }
-      43% { width: 140px; }
-      45% { width: 220px; }
-      46%, 100% { width: 252px; }
-    }
-
-    /* Écriture Ligne 5 : 48% à 58% */
+    /* Écriture Ligne 5 : "sudo echo $biggestProject" (47% à 59%) */
     @keyframes type-line5 {
-      0%, 48% { width: 0; }
-      50% { width: 30px; }
-      51% { width: 30px; }
-      54% { width: 80px; }
-      55% { width: 80px; }
-      58%, 100% { width: 110px; }
+      0%, 47% { width: 0; }
+      49.5% { width: 34px; }
+      52% { width: 84px; }
+      55% { width: 151px; }
+      59%, 100% { width: 210px; }
     }
 
-    /* Écriture Ligne 6 : 60% à 75% */
-    @keyframes type-line6 {
-      0%, 60% { width: 0; }
-      62% { width: 80px; }
-      64% { width: 160px; }
-      65% { width: 160px; }
-      68% { width: 280px; }
-      70% { width: 340px; }
-      72% { width: 440px; }
-      75%, 100% { width: 513px; }
-    }
-
-    /* Écriture Ligne 7 : 77% à 83% */
+    /* Écriture Ligne 7 : "clear" (64% à 74%) */
     @keyframes type-line7 {
-      0%, 77% { width: 0; }
-      80% { width: 10px; }
-      83%, 100% { width: 17px; }
+      0%, 64% { width: 0; }
+      66.5% { width: 17px; }
+      69% { width: 25px; }
+      71.5% { width: 34px; }
+      74%, 100% { width: 42px; }
     }
 
-    /* Écriture Ligne 8 : 85% à 92% */
-    @keyframes type-line8 {
-      0%, 85% { width: 0; }
-      87% { width: 15px; }
-      89% { width: 25px; }
-      92%, 100% { width: 42px; }
-    }
-
-    /* Déplacement synchronisé du curseur d'écriture */
+    /* Trajet coordonné du curseur d'écriture */
     @keyframes move-cursor {
       /* Saisie Ligne 1 */
       0% { x: 151px; y: 40px; }
-      2% { x: 168px; y: 40px; }
-      3% { x: 168px; y: 40px; }
-      5% { x: 201px; y: 40px; }
-      6% { x: 201px; y: 40px; }
-      8% { x: 235px; y: 40px; }
-      10% { x: 261px; y: 40px; }
+      1% { x: 168px; y: 40px; }
+      2.5% { x: 193px; y: 40px; }
+      4% { x: 210px; y: 40px; }
+      6% { x: 244px; y: 40px; }
+      8% { x: 260px; y: 40px; }
+      10% { x: 277px; y: 40px; }
       
       /* Pause Ligne 1 */
-      11.9% { x: 261px; y: 40px; }
+      11.9% { x: 277px; y: 40px; }
       
-      /* Passage Ligne 2 */
-      12% { x: 25px; y: 62px; }
+      /* Saut de ligne vers Ligne 2 */
+      12% { x: 42px; y: 62px; }
       
       /* Saisie Ligne 2 */
-      14% { x: 75px; y: 62px; }
-      15% { x: 75px; y: 62px; }
-      17% { x: 185px; y: 62px; }
-      18% { x: 185px; y: 62px; }
-      20% { x: 335px; y: 62px; }
-      22% { x: 437px; y: 62px; }
+      13.5% { x: 92px; y: 62px; }
+      15% { x: 160px; y: 62px; }
+      17% { x: 227px; y: 62px; }
+      19.5% { x: 302px; y: 62px; }
+      22% { x: 387px; y: 62px; }
+      24% { x: 454px; y: 62px; }
       
       /* Pause Ligne 2 */
-      23.9% { x: 437px; y: 62px; }
+      25.9% { x: 454px; y: 62px; }
       
-      /* Passage Ligne 3 */
-      24% { x: 151px; y: 84px; }
+      /* Saut de ligne vers Ligne 3 */
+      26% { x: 42px; y: 84px; }
       
       /* Saisie Ligne 3 */
-      26% { x: 191px; y: 84px; }
-      27% { x: 191px; y: 84px; }
-      29% { x: 251px; y: 84px; }
-      31% { x: 251px; y: 84px; }
-      33% { x: 301px; y: 84px; }
-      34% { x: 319px; y: 84px; }
+      28.5% { x: 134px; y: 84px; }
+      31% { x: 227px; y: 84px; }
+      34% { x: 322px; y: 84px; }
+      37% { x: 412px; y: 84px; }
+      40% { x: 496px; y: 84px; }
+      42% { x: 546px; y: 84px; }
       
       /* Pause Ligne 3 */
-      35.9% { x: 319px; y: 84px; }
+      43.9% { x: 546px; y: 84px; }
       
-      /* Passage Ligne 4 */
-      36% { x: 25px; y: 106px; }
+      /* Prompt de la ligne 4 et "^C" s'affichent d'un coup sec */
+      44% { x: 168px; y: 106px; }
       
-      /* Saisie Ligne 4 */
-      38% { x: 85px; y: 106px; }
-      39% { x: 85px; y: 106px; }
-      41% { x: 165px; y: 106px; }
-      43% { x: 165px; y: 106px; }
-      45% { x: 245px; y: 106px; }
-      46% { x: 277px; y: 106px; }
+      /* Pause sur la ligne 4 */
+      46.9% { x: 168px; y: 106px; }
       
-      /* Pause Ligne 4 */
-      47.9% { x: 277px; y: 106px; }
-      
-      /* Passage Ligne 5 */
-      48% { x: 151px; y: 128px; }
+      /* Saut de ligne vers Ligne 5 */
+      47% { x: 151px; y: 128px; }
       
       /* Saisie Ligne 5 */
-      50% { x: 181px; y: 128px; }
-      51% { x: 181px; y: 128px; }
-      54% { x: 231px; y: 128px; }
-      55% { x: 231px; y: 128px; }
-      58% { x: 261px; y: 128px; }
+      49.5% { x: 185px; y: 128px; }
+      52% { x: 235px; y: 128px; }
+      55% { x: 302px; y: 128px; }
+      59% { x: 361px; y: 128px; }
       
       /* Pause Ligne 5 */
-      59.9% { x: 261px; y: 128px; }
+      60.9% { x: 361px; y: 128px; }
       
-      /* Passage Ligne 6 */
-      60% { x: 25px; y: 150px; }
-      
-      /* Saisie Ligne 6 */
-      62% { x: 105px; y: 150px; }
-      64% { x: 185px; y: 150px; }
-      65% { x: 185px; y: 150px; }
-      68% { x: 305px; y: 150px; }
-      70% { x: 365px; y: 150px; }
-      72% { x: 465px; y: 150px; }
-      75% { x: 538px; y: 150px; }
+      /* Sortie de commande instantanée (Ligne 6) */
+      61% { x: 277px; y: 150px; }
       
       /* Pause Ligne 6 */
-      76.9% { x: 538px; y: 150px; }
+      63.9% { x: 277px; y: 150px; }
       
-      /* Passage Ligne 7 */
-      77% { x: 151px; y: 172px; }
+      /* Saut de ligne vers Ligne 7 (clear) */
+      64% { x: 151px; y: 172px; }
       
       /* Saisie Ligne 7 */
-      80% { x: 161px; y: 172px; }
-      83% { x: 168px; y: 172px; }
+      66.5% { x: 168px; y: 172px; }
+      69% { x: 176px; y: 172px; }
+      71.5% { x: 185px; y: 172px; }
+      74% { x: 193px; y: 172px; }
       
-      /* Pause Ligne 7 */
-      84.9% { x: 168px; y: 172px; }
+      /* Pause sur l'état final avant reset */
+      94.9% { x: 193px; y: 172px; }
       
-      /* Passage Ligne 8 */
-      85% { x: 151px; y: 194px; }
-      
-      /* Saisie Ligne 8 */
-      87% { x: 166px; y: 194px; }
-      89% { x: 176px; y: 194px; }
-      92% { x: 193px; y: 194px; }
-      
-      /* Pause Ligne 8 avant réinitialisation */
-      94.9% { x: 193px; y: 194px; }
-      
-      /* Reset du curseur pour le prochain cycle */
+      /* Réinitialisation de la console */
       95%, 100% { x: 151px; y: 40px; }
     }
 
@@ -248,23 +204,17 @@
     #rect1 { animation: type-line1 18s infinite; }
     #rect2 { animation: type-line2 18s infinite; }
     #rect3 { animation: type-line3 18s infinite; }
-    #rect4 { animation: type-line4 18s infinite; }
     #rect5 { animation: type-line5 18s infinite; }
-    #rect6 { animation: type-line6 18s infinite; }
     #rect7 { animation: type-line7 18s infinite; }
-    #rect8 { animation: type-line8 18s infinite; }
     #cursor-rect { animation: move-cursor 18s infinite; }
   </style>
 
   <defs>
     <clipPath id="clip1"><rect id="rect1" x="151" y="40" width="0" height="20" /></clipPath>
-    <clipPath id="clip2"><rect id="rect2" x="25" y="62" width="0" height="20" /></clipPath>
-    <clipPath id="clip3"><rect id="rect3" x="151" y="84" width="0" height="20" /></clipPath>
-    <clipPath id="clip4"><rect id="rect4" x="25" y="106" width="0" height="20" /></clipPath>
+    <clipPath id="clip2"><rect id="rect2" x="42" y="62" width="0" height="20" /></clipPath>
+    <clipPath id="clip3"><rect id="rect3" x="42" y="84" width="0" height="20" /></clipPath>
     <clipPath id="clip5"><rect id="rect5" x="151" y="128" width="0" height="20" /></clipPath>
-    <clipPath id="clip6"><rect id="rect6" x="25" y="150" width="0" height="20" /></clipPath>
     <clipPath id="clip7"><rect id="rect7" x="151" y="172" width="0" height="20" /></clipPath>
-    <clipPath id="clip8"><rect id="rect8" x="151" y="194" width="0" height="20" /></clipPath>
   </defs>
 
   <!-- Arrière-plan de la fenêtre du terminal -->
@@ -277,75 +227,77 @@
 
   <!-- Console de texte -->
   <g class="term-text" transform="translate(0, 15)">
-    <!-- Ligne 1 : L'invite principale reste visible après le clear -->
+    <!-- Ligne 1 : Toujours visible en haut -->
     <text x="25" y="55">
       <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
     </text>
-    <g class="line1">
-      <text x="151" y="55">Hello World ! \</text>
+    <g class="clearable">
+      <g class="line1">
+        <text x="151" y="55">Hello World ! \</text>
+      </g>
     </g>
 
     <!-- Ligne 2 -->
     <g class="clearable">
-      <g class="line2">
-        <text x="25" y="77">&gt; Don't hesitate to contact me on discord as sho7</text>
+      <g class="grp-line2">
+        <text x="25" y="77">&gt; </text>
+        <g class="line2">
+          <text x="42" y="77">Don't hesitate to contact me on discord as sho7</text>
+        </g>
       </g>
     </g>
 
     <!-- Ligne 3 -->
     <g class="clearable">
-      <text x="25" y="99">
-        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
-      </text>
-      <g class="line3">
-        <text x="151" y="99">echo $biggestProject</text>
+      <g class="grp-line3">
+        <text x="25" y="99">&gt; </text>
+        <g class="line3">
+          <text x="42" y="99">You can also check my root-me profile by clicking this term</text>
+        </g>
       </g>
     </g>
 
-    <!-- Ligne 4 -->
+    <!-- Ligne 4 (^C s'affiche de manière instantanée) -->
     <g class="clearable">
-      <g class="line4">
+      <g class="grp-line4">
         <text x="25" y="121">
-          <tspan class="prompt-symbol">&gt; Facial recognition </tspan>
-          <tspan style="fill: #58a6ff; text-decoration: underline; font-weight: bold;">"Faciale"</tspan>
+          <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+          <tspan>^C</tspan>
         </text>
       </g>
     </g>
 
     <!-- Ligne 5 -->
     <g class="clearable">
-      <text x="25" y="143">
-        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
-      </text>
-      <g class="line5">
-        <text x="151" y="143">echo $root-me</text>
+      <g class="grp-line5">
+        <text x="25" y="143">
+          <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+        </text>
+        <g class="line5">
+          <text x="151" y="143">sudo echo $biggestProject</text>
+        </g>
       </g>
     </g>
 
-    <!-- Ligne 6 -->
+    <!-- Ligne 6 (Sortie instantanée) -->
     <g class="clearable">
-      <g class="line6">
-        <text x="25" y="165">&gt; You can also check my root-me profile by clicking this term</text>
+      <g class="grp-line6">
+        <text x="25" y="165">
+          <tspan class="prompt-symbol">&gt; Facial recognition </tspan>
+          <tspan font-weight="bold">"Faciale"</tspan>
+        </text>
       </g>
     </g>
 
     <!-- Ligne 7 -->
     <g class="clearable">
-      <text x="25" y="187">
-        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
-      </text>
-      <g class="line7">
-        <text x="151" y="187">^C</text>
-      </g>
-    </g>
-
-    <!-- Ligne 8 -->
-    <g class="clearable">
-      <text x="25" y="209">
-        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
-      </text>
-      <g class="line8">
-        <text x="151" y="209">clear</text>
+      <g class="grp-line7">
+        <text x="25" y="187">
+          <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+        </text>
+        <g class="line7">
+          <text x="151" y="187">clear</text>
+        </g>
       </g>
     </g>
 
