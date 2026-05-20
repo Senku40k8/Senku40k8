@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="250" viewBox="0 0 600 250">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap');
+
     .bg {
       fill: #0d1117;
       stroke: #30363d;
@@ -15,7 +17,7 @@
     .dot-green { fill: #27c93f; cx: 65px; }
     
     .term-text {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Fira Code', 'Ubuntu Mono', 'Courier New', Courier, monospace;
       font-size: 14px;
       fill: #c9d1d9;
     }
@@ -38,44 +40,13 @@
       animation: blink 0.8s step-end infinite;
     }
 
-    /* Typewriter Keyframes for each line */
-    @keyframes type-line1 {
-      0% { width: 0; }
-      9% { width: 220px; }
-      100% { width: 220px; }
+    .clearable {
+      animation: clear-screen 18s infinite;
     }
-    @keyframes type-line2 {
-      0%, 11% { width: 0; }
-      24% { width: 345px; }
-      100% { width: 345px; }
-    }
-    @keyframes type-line3 {
-      0%, 26% { width: 0; }
-      38% { width: 310px; }
-      100% { width: 310px; }
-    }
-    @keyframes type-line4 {
-      0%, 40% { width: 0; }
-      41%, 100% { width: 10px; }
-    }
-    @keyframes type-line5 {
-      0%, 42% { width: 0; }
-      52% { width: 255px; }
-      100% { width: 255px; }
-    }
-    @keyframes type-line6 {
-      0%, 54% { width: 0; }
-      69% { width: 420px; }
-      100% { width: 420px; }
-    }
-    @keyframes type-line7 {
-      0%, 70% { width: 0; }
-      71%, 100% { width: 10px; }
-    }
-    @keyframes type-line8 {
-      0%, 73% { width: 0; }
-      83% { width: 295px; }
-      100% { width: 295px; }
+
+    @keyframes clear-screen {
+      0%, 94.9% { opacity: 1; }
+      95%, 100% { opacity: 0; }
     }
 
     /* Flashing cursor animation */
@@ -83,47 +54,218 @@
       50% { opacity: 0; }
     }
 
+    /* Line 1 typing: 0% to 10% (Hello World !) */
+    @keyframes type-line1 {
+      0% { width: 0; }
+      2% { width: 17px; }
+      3% { width: 17px; }
+      5% { width: 50px; }
+      6% { width: 50px; }
+      8% { width: 84px; }
+      10%, 94.9% { width: 110px; }
+      95%, 100% { width: 0; }
+    }
+
+    /* Line 2 typing: 12% to 22% (Don't hesitate...) */
+    @keyframes type-line2 {
+      0%, 12% { width: 0; }
+      14% { width: 50px; }
+      15% { width: 50px; }
+      17% { width: 160px; }
+      18% { width: 160px; }
+      20% { width: 310px; }
+      22%, 100% { width: 412px; }
+    }
+
+    /* Line 3 typing: 24% to 34% (echo $biggestProject) */
+    @keyframes type-line3 {
+      0%, 24% { width: 0; }
+      26% { width: 40px; }
+      27% { width: 40px; }
+      29% { width: 100px; }
+      31% { width: 100px; }
+      33% { width: 150px; }
+      34%, 100% { width: 168px; }
+    }
+
+    /* Line 4 typing: 36% to 46% (Facial recognition "Faciale") */
+    @keyframes type-line4 {
+      0%, 36% { width: 0; }
+      38% { width: 60px; }
+      39% { width: 60px; }
+      41% { width: 140px; }
+      43% { width: 140px; }
+      45% { width: 220px; }
+      46%, 100% { width: 252px; }
+    }
+
+    /* Line 5 typing: 48% to 58% (echo $root-me) */
+    @keyframes type-line5 {
+      0%, 48% { width: 0; }
+      50% { width: 30px; }
+      51% { width: 30px; }
+      54% { width: 80px; }
+      55% { width: 80px; }
+      58%, 100% { width: 110px; }
+    }
+
+    /* Line 6 typing: 60% to 75% (You can also check my root-me...) */
+    @keyframes type-line6 {
+      0%, 60% { width: 0; }
+      62% { width: 80px; }
+      64% { width: 160px; }
+      65% { width: 160px; }
+      68% { width: 280px; }
+      70% { width: 340px; }
+      72% { width: 440px; }
+      75%, 100% { width: 513px; }
+    }
+
+    /* Line 7 typing: 77% to 83% (^C) */
+    @keyframes type-line7 {
+      0%, 77% { width: 0; }
+      80% { width: 10px; }
+      83%, 100% { width: 17px; }
+    }
+
+    /* Line 8 typing: 85% to 92% (clear) */
+    @keyframes type-line8 {
+      0%, 85% { width: 0; }
+      87% { width: 15px; }
+      89% { width: 25px; }
+      92%, 100% { width: 42px; }
+    }
+
     /* Seamless timeline for the cursor to follow the typing text */
     @keyframes move-cursor {
-      0% { x: 25px; y: 40px; }
-      9% { x: 245px; y: 40px; }
-      11% { x: 25px; y: 62px; }
-      24% { x: 370px; y: 62px; }
-      26% { x: 25px; y: 84px; }
-      38% { x: 335px; y: 84px; }
-      40% { x: 35px; y: 106px; }
-      42% { x: 25px; y: 128px; }
-      52% { x: 280px; y: 128px; }
-      54% { x: 25px; y: 150px; }
-      69% { x: 445px; y: 150px; }
-      70% { x: 35px; y: 172px; }
-      73% { x: 25px; y: 194px; }
-      83% { x: 320px; y: 194px; }
-      97% { x: 320px; y: 194px; }
-      100% { x: 25px; y: 40px; }
+      /* Line 1 typing */
+      0% { x: 151px; y: 40px; }
+      2% { x: 168px; y: 40px; }
+      3% { x: 168px; y: 40px; }
+      5% { x: 201px; y: 40px; }
+      6% { x: 201px; y: 40px; }
+      8% { x: 235px; y: 40px; }
+      10% { x: 261px; y: 40px; }
+      
+      /* Pause on Line 1 */
+      11.9% { x: 261px; y: 40px; }
+      
+      /* Move to Line 2 start */
+      12% { x: 25px; y: 62px; }
+      
+      /* Line 2 typing */
+      14% { x: 75px; y: 62px; }
+      15% { x: 75px; y: 62px; }
+      17% { x: 185px; y: 62px; }
+      18% { x: 185px; y: 62px; }
+      20% { x: 335px; y: 62px; }
+      22% { x: 437px; y: 62px; }
+      
+      /* Pause on Line 2 */
+      23.9% { x: 437px; y: 62px; }
+      
+      /* Move to Line 3 start */
+      24% { x: 151px; y: 84px; }
+      
+      /* Line 3 typing */
+      26% { x: 191px; y: 84px; }
+      27% { x: 191px; y: 84px; }
+      29% { x: 251px; y: 84px; }
+      31% { x: 251px; y: 84px; }
+      33% { x: 301px; y: 84px; }
+      34% { x: 319px; y: 84px; }
+      
+      /* Pause on Line 3 */
+      35.9% { x: 319px; y: 84px; }
+      
+      /* Move to Line 4 start */
+      36% { x: 25px; y: 106px; }
+      
+      /* Line 4 typing */
+      38% { x: 85px; y: 106px; }
+      39% { x: 85px; y: 106px; }
+      41% { x: 165px; y: 106px; }
+      43% { x: 165px; y: 106px; }
+      45% { x: 245px; y: 106px; }
+      46% { x: 277px; y: 106px; }
+      
+      /* Pause on Line 4 */
+      47.9% { x: 277px; y: 106px; }
+      
+      /* Move to Line 5 start */
+      48% { x: 151px; y: 128px; }
+      
+      /* Line 5 typing */
+      50% { x: 181px; y: 128px; }
+      51% { x: 181px; y: 128px; }
+      54% { x: 231px; y: 128px; }
+      55% { x: 231px; y: 128px; }
+      58% { x: 261px; y: 128px; }
+      
+      /* Pause on Line 5 */
+      59.9% { x: 261px; y: 128px; }
+      
+      /* Move to Line 6 start */
+      60% { x: 25px; y: 150px; }
+      
+      /* Line 6 typing */
+      62% { x: 105px; y: 150px; }
+      64% { x: 185px; y: 150px; }
+      65% { x: 185px; y: 150px; }
+      68% { x: 305px; y: 150px; }
+      70% { x: 365px; y: 150px; }
+      72% { x: 465px; y: 150px; }
+      75% { x: 538px; y: 150px; }
+      
+      /* Pause on Line 6 */
+      76.9% { x: 538px; y: 150px; }
+      
+      /* Move to Line 7 start */
+      77% { x: 151px; y: 172px; }
+      
+      /* Line 7 typing */
+      80% { x: 161px; y: 172px; }
+      83% { x: 168px; y: 172px; }
+      
+      /* Pause on Line 7 */
+      84.9% { x: 168px; y: 172px; }
+      
+      /* Move to Line 8 start */
+      85% { x: 151px; y: 194px; }
+      
+      /* Line 8 typing */
+      87% { x: 166px; y: 194px; }
+      89% { x: 176px; y: 194px; }
+      92% { x: 193px; y: 194px; }
+      
+      /* Pause on Line 8 before Clear */
+      94.9% { x: 193px; y: 194px; }
+      
+      /* Reset cursor for next iteration during clear */
+      95%, 100% { x: 151px; y: 40px; }
     }
 
     /* Assigning animation timing */
-    #rect1 { animation: type-line1 14s infinite steps(26); }
-    #rect2 { animation: type-line2 14s infinite steps(41); }
-    #rect3 { animation: type-line3 14s infinite steps(37); }
-    #rect4 { animation: type-line4 14s infinite steps(1); }
-    #rect5 { animation: type-line5 14s infinite steps(30); }
-    #rect6 { animation: type-line6 14s infinite steps(50); }
-    #rect7 { animation: type-line7 14s infinite steps(1); }
-    #rect8 { animation: type-line8 14s infinite steps(35); }
-    #cursor-rect { animation: move-cursor 14s infinite; }
+    #rect1 { animation: type-line1 18s infinite; }
+    #rect2 { animation: type-line2 18s infinite; }
+    #rect3 { animation: type-line3 18s infinite; }
+    #rect4 { animation: type-line4 18s infinite; }
+    #rect5 { animation: type-line5 18s infinite; }
+    #rect6 { animation: type-line6 18s infinite; }
+    #rect7 { animation: type-line7 18s infinite; }
+    #rect8 { animation: type-line8 18s infinite; }
+    #cursor-rect { animation: move-cursor 18s infinite; }
   </style>
 
   <defs>
-    <clipPath id="clip1"><rect id="rect1" x="25" y="40" width="0" height="20" /></clipPath>
+    <clipPath id="clip1"><rect id="rect1" x="151" y="40" width="0" height="20" /></clipPath>
     <clipPath id="clip2"><rect id="rect2" x="25" y="62" width="0" height="20" /></clipPath>
-    <clipPath id="clip3"><rect id="rect3" x="25" y="84" width="0" height="20" /></clipPath>
+    <clipPath id="clip3"><rect id="rect3" x="151" y="84" width="0" height="20" /></clipPath>
     <clipPath id="clip4"><rect id="rect4" x="25" y="106" width="0" height="20" /></clipPath>
-    <clipPath id="clip5"><rect id="rect5" x="25" y="128" width="0" height="20" /></clipPath>
+    <clipPath id="clip5"><rect id="rect5" x="151" y="128" width="0" height="20" /></clipPath>
     <clipPath id="clip6"><rect id="rect6" x="25" y="150" width="0" height="20" /></clipPath>
-    <clipPath id="clip7"><rect id="rect7" x="25" y="172" width="0" height="20" /></clipPath>
-    <clipPath id="clip8"><rect id="rect8" x="25" y="194" width="0" height="20" /></clipPath>
+    <clipPath id="clip7"><rect id="rect7" x="151" y="172" width="0" height="20" /></clipPath>
+    <clipPath id="clip8"><rect id="rect8" x="151" y="194" width="0" height="20" /></clipPath>
   </defs>
 
   <!-- Terminal Window Background -->
@@ -136,46 +278,78 @@
 
   <!-- Terminal Text Console -->
   <g class="term-text" transform="translate(0, 15)">
-    <!-- Line 1 -->
+    <!-- Line 1: Main prompt stays visible on clear screen reset -->
+    <text x="25" y="55">
+      <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+    </text>
     <g class="line1">
-      <text x="25" y="55">
-        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ Hi there! \</tspan>
-      </text>
+      <text x="151" y="55">Hello World !</text>
     </g>
 
     <!-- Line 2 -->
-    <g class="line2">
-      <text x="25" y="77">&gt; I'm Senkuk0k8 aka sho7 on discord. Welcome to my profile!</text>
+    <g class="clearable">
+      <g class="line2">
+        <text x="25" y="77">&gt; Don't hesitate to contact me on discord as sho7</text>
+      </g>
     </g>
 
     <!-- Line 3 -->
-    <g class="line3">
-      <text x="25" y="99">&gt; I like making and breaking systems.</text>
+    <g class="clearable">
+      <text x="25" y="99">
+        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+      </text>
+      <g class="line3">
+        <text x="151" y="99">echo $biggestProject</text>
+      </g>
     </g>
 
-    <!-- Line 4 -->
-    <g class="line4">
-      <text x="25" y="121">&gt;</text>
+    <!-- Line 4 (Clickable SVG Hyperlink) -->
+    <g class="clearable">
+      <g class="line4">
+        <a href="https://github.com/Senku40k8/Faciale" target="_blank">
+          <text x="25" y="121">
+            <tspan class="prompt-symbol">&gt; Facial recognition </tspan>
+            <tspan style="fill: #58a6ff; text-decoration: underline; font-weight: bold; cursor: pointer;">"Faciale"</tspan>
+          </text>
+        </a>
+      </g>
     </g>
 
     <!-- Line 5 -->
-    <g class="line5">
-      <text x="25" y="143">&gt; Would you like to know more?</text>
+    <g class="clearable">
+      <text x="25" y="143">
+        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+      </text>
+      <g class="line5">
+        <text x="151" y="143">echo $root-me</text>
+      </g>
     </g>
 
     <!-- Line 6 -->
-    <g class="line6">
-      <text x="25" y="165">&gt; Click this terminal to see my root-me profile.</text>
+    <g class="clearable">
+      <g class="line6">
+        <text x="25" y="165">&gt; You can also check my root-me profile by clicking this term</text>
+      </g>
     </g>
 
     <!-- Line 7 -->
-    <g class="line7">
-      <text x="25" y="187">&gt;</text>
+    <g class="clearable">
+      <text x="25" y="187">
+        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+      </text>
+      <g class="line7">
+        <text x="151" y="187">^C</text>
+      </g>
     </g>
 
     <!-- Line 8 -->
-    <g class="line8">
-      <text x="25" y="209">&gt; I'm going to SIGINT real quick ^C</text>
+    <g class="clearable">
+      <text x="25" y="209">
+        <tspan class="prompt-user">noble@heart</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+      </text>
+      <g class="line8">
+        <text x="151" y="209">clear</text>
+      </g>
     </g>
 
     <!-- Flashing Typing Cursor -->
