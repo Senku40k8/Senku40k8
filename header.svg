@@ -263,7 +263,7 @@
     <g class="clearable">
       <g class="grp-line4">
         <text x="25" y="121">
-          <tspan class="prompt-user">p@ching</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+          <tspan class="prompt-user">k@chow</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
           <tspan>^C</tspan>
         </text>
       </g>
@@ -273,7 +273,7 @@
     <g class="clearable">
       <g class="grp-line5">
         <text x="25" y="143">
-          <tspan class="prompt-user">p@ching</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+          <tspan class="prompt-user">k@chow</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
         </text>
         <g class="line5">
           <text x="126" y="143">sudo echo $biggestProject</text>
@@ -295,7 +295,7 @@
     <g class="clearable">
       <g class="grp-line7">
         <text x="25" y="187">
-          <tspan class="prompt-user">p@ching</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
+          <tspan class="prompt-user">k@chow</tspan><tspan class="prompt-symbol">:</tspan><tspan class="prompt-loc">~</tspan><tspan class="prompt-symbol">$ </tspan>
         </text>
         <g class="line7">
           <text x="126" y="187">clear</text>
